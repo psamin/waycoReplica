@@ -1,5 +1,7 @@
 # Med-Legal Intake Dashboard
 
+**Demo Video:** [Watch the YouTube Demo](https://youtu.be/o-id4jpo5ho)
+
 An AI-powered operations tool that converts raw med-legal intake notes into structured case data, missing-information checks, follow-up tasks, and dashboard metrics — keeping a human in the loop through editable fields before anything is saved.
 
 ---
