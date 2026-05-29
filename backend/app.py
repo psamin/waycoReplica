@@ -6,7 +6,7 @@ from typing import List, Optional
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from anthropic import Anthropic
+from anthropic import Anthropic, Timeout
 from pydantic import BaseModel
 
 # ── Environment ──────────────────────────────────────────────────────────────
@@ -25,7 +25,10 @@ logging.basicConfig(
 logger = logging.getLogger("medlegal")
 
 # ── Anthropic client ──────────────────────────────────────────────────────────
-claude = Anthropic(api_key=ANTHROPIC_API_KEY)
+claude = Anthropic(
+    api_key=ANTHROPIC_API_KEY,
+    timeout=Timeout(connect=30.0, read=600.0, write=600.0, pool=600.0),
+)
 logger.info("Anthropic client initialized")
 
 # ── Flask app ─────────────────────────────────────────────────────────────────
